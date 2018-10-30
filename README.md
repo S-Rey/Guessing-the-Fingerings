@@ -15,7 +15,16 @@ The task was to continue the semester project of another student Raphaël Latty,
 This project mainly focused on the violin, as it is the instrument used to record the samples on which the algorithm has been tested. But the algorithm should work for any instrument which pluck their strings and vary their length to produce sound.
 
 ### Summary
-The model used for the inhamornicity of the string was the following: 
+The inhamornicity model of the string used was the following:
+<p align="center">
+  <img src="images/partials-model" width="350"/>
+</p>
+where *B* is defined as:
+<p align="center">
+  <img src="images/b-model" width="250"/>
+</p>
+
+
 
 This is a MATLAB code which computes the estimated inharmonicity of a given
 audio file.
