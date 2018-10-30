@@ -17,11 +17,11 @@ This project mainly focused on the violin, as it is the instrument used to recor
 ### Summary
 The inhamornicity model of the string used was the following:
 <p align="center">
-  <img src="images/partials-model.png" width="350"/>
+  <img src="images/partials-model.png" width="250"/>
 </p>
 where *B* is defined as:
 <p align="center">
-  <img src="images/b-model.png" width="250"/>
+  <img src="images/b-model.png" width="150"/>
 </p>
 
 
