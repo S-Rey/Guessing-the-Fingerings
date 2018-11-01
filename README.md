@@ -27,10 +27,25 @@ where *B* is defined as:
 
 
 This is a MATLAB code which computes the estimated inharmonicity of a given
-audio file.
+audio file. It uses simple DFTs and the [MUSIC](https://en.wikipedia.org/wiki/MUSIC_(algorithm)) algorithm.
+The DFT is used to first approximate the partials location. As the sample size is not sufficient to get a good estimation of the partials, the aglrithm then refines the peaks locations using the pseudo-spectrum of the MUSIC algorithm
+
+
+To find the partials location, the algorithm first do a power spectrum on the signal: 
+<p align="center">
+  <img src="images/power_spectrum.png" width="450"/>
+</p>
+
+We see that the partials have approximatively the same distance between each other. To evaluate this distance, we redo a power spectrum on this result, which gives us the following output:
+
+<p align="center">
+  <img src="images/powpow-spectrum.png" width="450"/>
+</p>
+
+The second peak highlighted in red contains the frequency information of the distance of the partials. We take its maximum and deduce then the approximate location of the partials. After that, the algorithm uses the MUSIC pseudo-spectrum evaluated on the sample as a way of refining the peak locations.
+
 To use it run the test_inharmonicity.mlx with the desired file location in 
 the PATH variable. It will take all the aif file in the given folder and stack
 their inharmonicity in the Bs variable.
-
 
 
