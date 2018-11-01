@@ -19,7 +19,7 @@ The inhamornicity model of the string used was the following:
 <p align="center">
   <img src="images/partials-model.png" width="250"/>
 </p>
-where *B* is defined as:
+where B is defined as:
 <p align="center">
   <img src="images/b-model.png" width="150"/>
 </p>
@@ -28,7 +28,7 @@ where *B* is defined as:
 
 This is a MATLAB code which computes the estimated inharmonicity of a given
 audio file. It uses simple DFTs and the [MUSIC](https://en.wikipedia.org/wiki/MUSIC_(algorithm)) algorithm.
-The DFT is used to first approximate the partials location. As the sample size is not sufficient to get a good estimation of the partials, the aglrithm then refines the peaks locations using the pseudo-spectrum of the MUSIC algorithm
+The DFT is used to first approximate the partials location. As the sample size is not sufficient to get a good estimation of the partials, the algorithm then refines the peaks locations using the MUSIC pseudo-spectrum of the sample.
 
 
 To find the partials location, the algorithm first do a power spectrum on the signal: 
@@ -44,8 +44,20 @@ We see that the partials have approximatively the same distance between each oth
 
 The second peak highlighted in red contains the frequency information of the distance of the partials. We take its maximum and deduce then the approximate location of the partials. After that, the algorithm uses the MUSIC pseudo-spectrum evaluated on the sample as a way of refining the peak locations.
 
-To use it run the test_inharmonicity.mlx with the desired file location in 
-the PATH variable. It will take all the aif file in the given folder and stack
+To use it run the test_inharmonicity.mlx with the desired file location in
+the PATH variable. It will take all the .aif files in the given folder and stack
 their inharmonicity in the Bs variable.
 
+## Some results
 
+We recorded multiple samples of pizzicato D4 with a violin.
+Firstly using the open D string and  secondly using the 4th position on the G string.
+As the two strings have different stiffnesses, masses etc, we can see that the B coefficient is different for both strings. Note that in these results, B is not multiplied by L^2 to get a constant result.
+
+<p align="center">
+  <img src="images/tab1-DD4.png" width="350"/>
+</p>
+
+<p align="center">
+  <img src="images/tab2-GD4.png" width="350"/>
+</p>
