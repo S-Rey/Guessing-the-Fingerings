@@ -24,6 +24,7 @@ where B is defined as:
   <img src="images/b-model.png" width="150"/>
 </p>
 
+We can see that if we multiply B by L^2, we get a constant result that can then characterize the string.
 
 
 This is a MATLAB code which computes the estimated inharmonicity of a given
